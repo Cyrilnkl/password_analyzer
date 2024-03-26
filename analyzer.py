@@ -1,11 +1,18 @@
 # SE WE CAN CREATE A REGEX
 import re
 
+class bcolors:
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+
 from readFile import *
 
 
 def checkLength(password):
-    if len(password)>7 : return 10
+    if len(password)>10 : return 20
+    elif len(password)>7 : return 10
     return 0
 
 
@@ -77,7 +84,8 @@ def checkNumbers(password):
 
             if(score == -3): score+=3
             elif(score == 0): score+=5
-            elif(score == 5): score+=5
+            elif(score == 5): score+=10
+            elif(score == 10): score+=5
 
     if(counter == len(password)):
         score = 0
@@ -89,7 +97,7 @@ def checkMain(password):
     score = 0
 
     if(leakCheck(password)):
-        return 0
+        return -50
 
     score += checkLength(password)
     score += checkSpecialCharacters(password)
@@ -99,6 +107,14 @@ def checkMain(password):
     return score
 
 
-#def displayResult(score):
-#    if(score < 20):
-#        
+def displayResult(score):
+    if(score == -50):
+        print(bcolors.FAIL + " this password has been leaked !")
+    elif(score < 20):
+        print(bcolors.FAIL + " very low !")
+    elif(score < 50):
+        print(bcolors.WARNING + " medium !")
+    elif(score < 80):
+        print(bcolors.OKBLUE + " high !")
+    elif(score > 80):
+        print(bcolors.OKGREEN + " very strong !")

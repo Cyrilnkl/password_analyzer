@@ -5,6 +5,7 @@ class bcolors:
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
+    OKCYAN = '\033[96m'
 
 if __name__ == "__main__":
                                                                                    
@@ -18,15 +19,12 @@ if __name__ == "__main__":
 
     print(bcolors.OKBLUE + "Please enter your password : ", end="")
     password = input()
-    print(password)
-    score = 0;
-    #password = "abc123"
 
+    score = 0;
     score = checkMain(password)
 
-    print("\n\nThere is the score of your password :", score)
-    print("\n\nThe severity is :", end="");
+    score = int((score/65)*100)
+    print("\n\nThere is the score of your password :", score + "%")
+    print(bcolors.OKCYAN + "\n\nSecurity level :", end="");
 
-
-
-    print(score)
+    displayResult(score)

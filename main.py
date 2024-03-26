@@ -7,3 +7,5 @@ if __name__ == "__main__":
     score += checkSpecialCharacters(password)
 
     print(score)
+
+    checkMinCharacters(password)

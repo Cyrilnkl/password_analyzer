@@ -1,0 +1,2 @@
+def checkSpecialCharacters(password):
+    specialChar = ""

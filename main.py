@@ -1,15 +1,10 @@
 from analyzer import *
 
 class bcolors:
-    HEADER = '\033[95m'
     OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
 
 if __name__ == "__main__":
                                                                                    
@@ -21,7 +16,7 @@ if __name__ == "__main__":
     print(bcolors.WARNING + "Welcome to the password analyzer...")
     print(bcolors.WARNING + "Let's see the level of security of your password\n")
 
-    print(bcolors.OKGREEN + "Please enter your password : ", end="")
+    print(bcolors.OKBLUE + "Please enter your password : ", end="")
     password = input()
     print(password)
     score = 0;
@@ -30,5 +25,8 @@ if __name__ == "__main__":
     score = checkMain(password)
 
     print("\n\nThere is the score of your password :", score)
+    print("\n\nThe severity is :", end="");
+
+
 
     print(score)

@@ -3,9 +3,11 @@ import re
 
 from readFile import *
 
+
 def checkLength(password):
     if len(password)>7 : return 10
     return 0
+
 
 def checkSpecialCharacters(password):
     score = -2
@@ -13,7 +15,6 @@ def checkSpecialCharacters(password):
 
     for i in range (0, len(password)):
         if (password[i] in specialChar):
-            print("oui : ", password[i])
 
             # IF ONE SPECIAL CHAR
             if (score == -2) : score+=7
@@ -25,6 +26,7 @@ def checkSpecialCharacters(password):
             elif (score == 10): score+=5
 
     return score
+
 
 def checkLowercase(password):
     score = -4
@@ -45,7 +47,6 @@ def checkLowercase(password):
     return score
 
 
-
 def checkUppercase(password):
     score = -4
     counter = 0
@@ -64,9 +65,29 @@ def checkUppercase(password):
 
     return score
 
+
+def checkNumbers(password):
+    score = -3
+    counter = 0
+    numbers = [chr(i) for i in range(ord('0'), ord('9')+1)]
+
+    for i in range (0, len(password)):
+        if (password[i] in numbers):
+            counter+=1
+
+            if(score == -3): score+=3
+            elif(score == 0): score+=5
+            elif(score == 5): score+=5
+
+    if(counter == len(password)):
+        score = 0
+
+    return score
+
+
 def checkMain(password):
     score = 0
-    
+
     if(leakCheck(password)):
         return 0
 
@@ -76,3 +97,8 @@ def checkMain(password):
     score += checkUppercase(password)
     
     return score
+
+
+#def displayResult(score):
+#    if(score < 20):
+#        

@@ -24,7 +24,7 @@ if __name__ == "__main__":
     score = checkMain(password)
 
     score = int((score/65)*100)
-    print("\n\nThere is the score of your password :", score + "%")
+    print("\n\nThere is the score of your password :", score, "%")
     print(bcolors.OKCYAN + "\n\nSecurity level :", end="");
 
     displayResult(score)

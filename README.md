@@ -11,31 +11,26 @@
 
 A short program that analyze the security level of your password.
 
-
 The scoring criteria are :
 
-▶ Lenght of your password
-
-▶ # of special characters
-
-▶ # of lowercase / uppercase
-
-▶ # of numbers
+    ▶ Lenght of your password
+    ▶ # of special characters
+    ▶ # of lowercase / uppercase
+    ▶ # of numbers
 
 
 Your password will pass those validations and then be graded by the program according to its complexity. 
-
 If your password have been leaked and is present in the `pass.txt` file, you'll have a null grade. 
+
+
 ## Usage/Examples
 
 To start the program, you have to lunch the `main.py` file. 
-
-Step one : 
-
-Install python : https://www.python.org/downloads/
-
-
 Then, clone the repo and start the program with those following commands :
+
+* Install python :
+  
+  > Install python : https://www.python.org/downloads/
 
 - Clone the repo :
 ```
@@ -52,7 +47,6 @@ cd password_analyzer
 ```
 python3 main.py
 ```
-
 
 ## Author
 
